@@ -87,11 +87,11 @@ DIPPolicy::DIPtouch(Index set, Index index, Time time)
 
 	if (time1 < smallest_time) {
 //	    smallest_index = i;
-	    smallest_time = time1;
+	    smallest_time = time1; //
 	}
     }
 
-    m_last_ref_ptr[set][index] = smallest_time;
+    m_last_ref_ptr[set][index] = smallest_time - 1; //This makes the line LRU as no other line has a smaller time at this point.
 } 
 
 inline Index
